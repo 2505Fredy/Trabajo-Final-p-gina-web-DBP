@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesChoose.css') }}" />{% endblock %}
+
+{% block script %}<script src="{{ url_for('static', filename='js/close.js') }}" ></script>{% endblock %}
+
+{% block content %}<h2>Escoja la plantilla de su preferencia</h2>
+<div id="templates">
+    <section id="template1" class="template">
+        <h3>Primera plantilla</h3>
+        <img src="../static/media/template1.jpg" class="image" /><br><br>
+        <a href="template1" class="button" >Escoger primera plantilla</a>
+    </section>
+    <section id="template2" class="template">
+        <h3>Segunda plantilla</h3>
+        <img src="../static/media/template2.jpg" class="image" /><br><br>
+        <a href="template2" class="button" >Escoger segunda plantilla</a>
+    </section>
+</div>{% endblock %}

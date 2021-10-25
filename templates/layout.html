@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <title>CV Generator</title>
+        <meta name="author" content="Fredy Goolberth QUispe Neira" />
+        <meta name="keywords" content="html, css, flask, python" />
+        <link rel="shortcut icon" href="../static/media/logo.png" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+        {% block styles %}{% endblock %}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    </head>
+    <body class="container">
+        <header id="header">CV Generator</header>
+        <nav id="menu">
+            <ul id="menuButtons">
+                <li><a class="button" id="principal" href="login">Principal</a></li>
+                <li><a class="button" id="help" href="">Ayuda</a></li>
+                <li><a class="button" id="about" href="">Acerca de</a></li>
+                {% block sessionButton %}{% endblock %}
+            </ul>
+        </nav>
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <footer id="footer">
+            <p>Copyright © 2021-2022<br>TODOS LOS DERECHOS RESERVADOS</p>
+        </footer>
+        {% block script %}{% endblock %}
+    </body>
+</html>

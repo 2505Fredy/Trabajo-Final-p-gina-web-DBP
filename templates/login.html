@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesLogin.css') }}" />{% endblock %}
+
+{% block script %}<script src="{{ url_for('static', filename='js/login.js') }}" ></script>{% endblock %}
+
+{% block content %}<div id="loginForm">
+    <h3>Sea ud. bienvenido, inicie sesión o regístrese.</h3>
+    <form id="formOne" action="{{ url_for('chooseTemplate') }}" method='post' ><b>
+        <label>Nombre de usuario<br><input type="text" name="username" required placeholder="Escriba aquí su nombre de usuario" /></label><br>
+        <label>Contraseña de usuario<br><input type="password" name="password" required placeholder="Escriba aquí su contraseña" /></label><br>
+        <label id="email">Email de usuario<br><input type="email" id="emailtwo" name="email" placeholder="Escriba aquí un email válido" /></label><br>
+        <input type="submit" id="submit" class="button" value="Enviar" /><br>
+        <p class="message">¿No estás registrado? <a id="changeForm" >Registrarme</a></p></b>
+    </form>
+</div>{% endblock %}
+

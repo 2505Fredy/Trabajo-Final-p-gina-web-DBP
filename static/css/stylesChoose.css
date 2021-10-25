@@ -1,0 +1,29 @@
+#content {
+    padding: 20px;
+    min-height: 810px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#templates {
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.template {
+    margin: 0px;
+    width: 48%;
+    padding: 5px;
+    display: inline-block;
+}
+
+.image {
+    max-width: 600px;
+    width: 40%;
+    border-radius: 5px;
+    box-sizing: border-box;
+}

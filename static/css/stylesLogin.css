@@ -1,0 +1,46 @@
+
+#loginForm {
+    width: 300px;
+    border-radius: 10px;
+    margin: auto;
+    padding: 20px;
+    min-height: 810px;
+    box-sizing: border-box;
+}
+
+#formOne {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+label {
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+
+input {
+    padding: 3px;
+    margin-bottom: 10px;
+    width: 85%;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#changeForm:hover {
+    cursor: pointer;
+}
+
+#email {
+    display: none;
+}
+
+#submit {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
