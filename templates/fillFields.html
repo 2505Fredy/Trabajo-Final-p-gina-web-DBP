@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css//fillFields.css') }}" />{% endblock %}
+
+{% block script %}<script src="{{ url_for('static', filename='js/close.js') }}" ></script>{% endblock %}
+
+{% block content %}<aside id="aside">
+    <h3>Índice</h3>
+    <ul>
+        <li><a href="#personalData">Datos personales</a></li>
+        <li><a href="#contacts">Contactos</a></li>
+        <li><a href="#languages">Idiomas dominados</a></li>
+        <li><a href="#programs">Programas dominados</a></li>
+        <li><a href="#works">Puestos de trabajo ocupados</a></li>
+        <li><a href="#institutions">Instituciones educativas</a></li>
+    </ul>
+</aside>
+<form id="fillFields" action="{{ url_for('generated') }}" method="post">
+    <div id="column1" class="column">
+        <section class="section" id="personalData">
+            <h3>Datos personales</h3><hr>
+            <ul>
+                <li>
+                    <label>Nombres y apellidos<br><input type="text" name="completName" required /></label>
+                </li>
+                <li>
+                    <label>Puesto buscado u ocupado<br><input type="text" name="positionHeld" required /></label>
+                </li>
+                <li>
+                    <label>Presentación<br><textarea name="presentation" placeholder="Escriba aquí su presentación" required ></textarea></label>
+                </li>
+                <h4>Datos</h4><hr>
+                <table>
+                    <tr>
+                        <th>Tipo de dato</th>
+                        <th>Valor</th>
+                    </tr>
+                    {% for i in range(noData) %}
+                    <tr>
+                        <td><input type="text" name="dataName{{ i }}" placeholder="Ejm: Dirección, Edad, etc." required /></td>
+                        <td><input type="text" name="dataValue{{ i }}" placeholder="Ejm: Av. Tacna N° 123, 25 años, etc." required /></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </ul>
+        </section>
+        <section class="section" id="contacts">
+            <h3>Contactos<i><small> (Opcional)</small></i></h3><hr>
+            <ul>
+                <li><label><i class="fas fa-at"></i> <input type="url" value="" name="contactMail" placeholder="Ingrese el link de su correo" /></label><br></li>
+                <li><label><i class="fab fa-whatsapp"></i> <input type="url" value="" name="contactWhats" placeholder="Ingrese el link de su whatsapp" /></label><br></li>
+                <li><label><i class="fab fa-facebook-f"></i>&nbsp;&nbsp; <input type="url" value="" name="contactFace" placeholder="Ingrese el link de su perfil" /></label><br></li>
+                <li><label><i class="fab fa-linkedin-in"></i> <input type="url" value="" name="contactLink" placeholder="Ingrese el link de su perfil" /></label><br></li>
+                <li><label><i class="fab fa-skype"></i> <input type="url" value="" name="contactSky" placeholder="Ingrese el link de su perfil" /></label><br></li>
+                <li><label><i class="fab fa-twitter"></i> <input type="url" value="" name="contactTwit" placeholder="Ingrese el link de su perfil" /></label><br></li>
+            </ul>
+        </section>
+        <datalist id="level">
+            <option value="Básico">
+            <option value="Básico Intermedio">
+            <option value="Intermedio">
+            <option value="Intermedio Avanzado"> 
+            <option value="Avanzado">
+        </datalist>
+        <section class="section" id="languages">
+            <h3>Idiomas dominados</h3><hr>
+            <table>
+                <tr>
+                    <th>Nombre del idioma</th>
+                    <th>Nivel de dominio</th>
+                </tr>
+                {% for i in range(noLanguage) %}
+                <tr>
+                    <td><input type="text" name="langName{{ i }}" placeholder="Ejm: Inglés, Francés, etc." required /></td>
+                    <td><input type="text" list="level" name="langLevel{{ i }}" required /></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </section>
+        <section class="section" id="programs">
+            <h3>Programas dominados</h3>
+            <table>
+                <tr>
+                    <th>Nombre del programa</th>
+                    <th>Nivel de dominio</th>
+                </tr>
+                {% for i in range(noProgram) %}
+                <tr>
+                    <td><input type="text" name="programName{{ i }}" placeholder="Ejm: PowerPoint, Github, etc." required /></td>
+                    <td><input type="text" list="level" name="programLevel{{ i }}" required /></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </section>
+    </div>
+    <div id="column2" class="column">
+        <section class="section" id="works">
+            <h3>Puestos de trabajo ocupados</h3><hr>
+            <ul>
+                {% for i in range(noWorks) %}
+                
+                <li>
+                    <label>Lugar de empleo<br><input type="text" name="dirWork{{ i }}" placeholder="Ejm: Junín-Perú, La Paz-Bolivia" required /></label><br>
+                    <label>Nombre de la empresa<br><input type="text" name="nameCompany{{ i }}" placeholder="Ejm: Novatronic S.A.C." required /></label><br>
+                    <label>Nombre del puesto ocupado<br><input type="text" name="workName{{ i }}" placeholder="Ejm: Ingeniero de Software" required /></label><br>
+                    <label>Desde<br><input type="month" name="startWork{{ i }}" required /><br>Hasta<br><input type="month" name="endWork{{ i }}" required /></label><br>
+                    <label>Logros obtenidos en la empresa<br><textarea name="review{{ i }}" placeholder="Escriba aquí los logros que obtuvo" required ></textarea></label><br>
+                </li>
+                {% endfor %}
+                
+            </ul>
+        </section>
+    </div>
+    <div id="column3" class="column">
+        <section id="institutions"class="section">
+            <h3>Instituciones de educación</h3><hr>
+            <ul>
+                {% for i in range(noEducation) %}
+                
+                <li>
+                    <label>Lugar de estudio<br><input type="text" name="dirStudy{{ i }}" placeholder="País-Departamento(Estado)-Provincia" required /></label><br>
+                    <label>Desde<br><input type="month" name="startStudy{{ i }}" required /><br>Hasta<br><input type="month" name="endStudy{{ i }}" required /></label><br>
+                    <label>Grado académico<br><input type="text" name="academicDegree{{ i }}" placeholder="Ejm: licenciatura en Ciencia de la Computación" required /></label><br>
+                    <label>Nombre de la institución Educativa<br><input type="text" name="nameInstitution{{ i }}" placeholder="Ejm: Universidad Católica San Pablo" required /></label><br>
+                </li>
+                {% endfor %}
+                
+            </ul>
+        </section>
+    </div>
+    <section id="buttonContainer" style="text-align: center; grid-area: button;"><input type="submit" class="button" value="Enviar formulario" ></section>
+</form>{% endblock %}

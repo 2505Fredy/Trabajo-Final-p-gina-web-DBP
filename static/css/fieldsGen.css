@@ -1,0 +1,38 @@
+#content {
+    color: rgb(205, 224, 202);
+}
+
+#formFieldsNumber {
+    padding: 20px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #365725, transparent);
+    display: grid;
+    max-width: 1100px;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "form form image";
+}
+
+#formContainer {
+    text-align: left;
+    grid-area: form;
+}
+
+#imageContainer {
+    grid-area: image;
+}
+
+#templateImage {
+    width: 90%;
+    border-radius: 5px;
+}
+
+input {
+    min-width: 90px;
+    font-size: 16px;
+}
+
+.button {
+    width: auto;
+}

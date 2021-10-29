@@ -1,0 +1,101 @@
+h1 {
+    font-size: 45px;
+}
+
+#docCreated {
+    box-sizing: border-box;
+    max-width: 900px;
+    margin: 10px auto;
+    background-color: rgb(255, 255, 255);
+    padding: 25px 30px;
+    display: block;
+    color: black;
+    text-align: left;
+    min-height: 1200px;
+}
+
+.section {
+    margin: 5px 15px;  
+}
+
+#profile {
+    display: grid;
+    color: white;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "image data";
+    background-color: rgb(21, 100, 31);
+    border-bottom: 2px solid rgb(90, 82, 82);
+    max-height: 263px;
+}
+
+#profilePhoto {
+    padding-top: 10px;
+    text-align: center;
+    grid-area: image;
+}
+
+#profile-image {
+    width: 95%;
+    border-radius: calc(95%/2);
+    border: 1px solid black;
+}
+
+#name-heldPos {
+    vertical-align: middle;
+    text-align: right;
+    padding: 20px;
+    grid-area: data;
+}
+
+#contentDoc {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: " data work"
+                         "presen work"
+                          "cont work"
+                          "hab work";
+    min-height: calc(100% - 263px);
+}
+
+#profileData {
+    grid-area: data;
+}
+#presentation {
+    grid-area: presen;
+}
+#habilities {
+    grid-area: hab;
+}
+#contacts {
+    grid-area: cont;
+}
+#workEducation {
+    box-sizing: border-box;
+    background-color: rgb(56, 206, 76);
+    grid-area: work;
+}
+
+td {
+    min-width: 80px;
+}
+
+hr {
+    border-color: rgb(92, 85, 85);
+    margin-block-end: 5px;
+    margin-block-start: 0;
+}
+
+.sectionForm {
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(98, 255, 119);
+    margin-bottom: 7px;
+    box-sizing: border-box;
+}
+
+h3 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}

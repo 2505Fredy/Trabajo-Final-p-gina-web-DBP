@@ -1,15 +1,15 @@
 #content {
     padding: 20px;
     min-height: 810px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(187, 172, 172, 0.3);
 }
 
-#templates {
+#templateForm {
     width: 80%;
     margin: auto;
     margin-top: 50px;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(241, 224, 224, 0.3);
     box-sizing: border-box;
     border-radius: 10px;
 }
@@ -26,4 +26,8 @@
     width: 40%;
     border-radius: 5px;
     box-sizing: border-box;
+}
+
+input[type="radio"] {
+    -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
 }

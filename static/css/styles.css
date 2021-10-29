@@ -2,23 +2,30 @@
     margin: 10px;
     padding: 0px;
     text-align: center;
-    background-color: #76b852;
+    background-image: url(../media/image2.jpg);
+    background-size: cover;
     display: block;
+    color:rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.container #header, .container #menu, .container #footer, .container #content  {
+.container #header, .container #menu, .container #footer  {
     padding: 5px;
+    border-radius: 10px;
+}
+
+.container #content {
+    padding: 0px;
     border-radius: 10px;
 }
 
 #header {
     font-size: 45px;
-    background-color: black;
+    background-image: linear-gradient(to right, black, rgba(26, 46, 17, 0.445), black);
     color: white;
 }
-
 #menu {
-    background-color: #b8e994;
+    background-image: linear-gradient(to left, #b8e994, transparent);
     text-align: right;
 }
 
@@ -31,7 +38,7 @@
 }
 
 .button:hover {
-    background-position: right;
+    background-image: linear-gradient(to right, rgb(5, 53, 42), rgb(28, 133, 14), rgb(5, 53, 42));
 }
 
 .button {
@@ -42,7 +49,7 @@
     margin: 3px;
     font-weight: bold;
     border-radius: 5px;
-    transition: 0.6s;
+    transition: 1s linear all;
     border: 1px solid rgb(0, 24, 4);
     cursor: pointer;
 }
@@ -58,4 +65,65 @@
 #footer {
     background-color: black;
     color: white;
+}
+
+input, textarea {
+    border-radius: 3px;
+    min-width: 40%;
+    margin-bottom: 5px;
+}
+
+textarea {
+    min-height: 90px;
+    min-width: 177px;
+    max-width: 177px;
+    max-height: 200px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(166, 166, 248);
+    transition: 0.5s linear all;
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(99, 255, 79);
+}
+
+input[type='submit'] {
+    min-width: auto;
+}
+input[type='month'] {
+    min-width: auto;
+}
+input[type='radio'] {
+    min-width: auto;
+}
+
+content > ul {
+    margin-block-start: 0;
+    margin-inline-start: -2em;
+    list-style: none;
+}
+
+ul > li > div > small, h5, h4 {
+    margin: 0;
+    padding: 0;
+}
+
+
+@media print {
+    #content, .container {
+        background-color: white;
+    }
+    .container #header, .container #menu, .container #footer {
+        display: none;
+    }   
+    .section {
+        page-break-before: always;
+    }
+    ul, img, table {
+        page-break-inside: avoid;
+    }
 }

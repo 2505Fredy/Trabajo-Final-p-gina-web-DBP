@@ -1,4 +1,4 @@
-4
+5
 fredyNeira
 2505
 ejem@gmail.com
@@ -10,4 +10,7 @@ raulDiaz
 ejem@gmail.com
 pabloMedrano
 4325
+ejem@gmail.com
+pedroBaluarte
+1234
 ejem@gmail.com

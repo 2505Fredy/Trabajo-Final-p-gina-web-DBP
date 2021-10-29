@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block styles %}<link rel="stylesheet" href="{{ templateUrl }}" />{% endblock %}
+
+{% block script %}<script src="{{ url_for('static', filename='js/close.js') }}" ></script>{% endblock %}
+
+{% block content %}<h2 style="color: white;" >Documento generado</h2>
+<div id="docCreated">
+    <div id="profile">
+        <section class="section" id="profilePhoto">
+            <img src="../static/media/profile.jpg" id="profile-image" style="width: 90%;">
+        </section>
+        <section class="section" id="name-heldPos">
+            <h1>{{ name }}</h1>
+            <h3>{{ workOcuped }}</h3>
+        </section>     
+    </div>
+    <div id="contentDoc">
+        <section class="section" id="profileData">
+            <h3>Datos personales</h3><hr> 
+            <table>
+                {% for i in listData %}
+                <tr>
+                    <td>{{ i[0] }}</td>
+                    <td>: {{ i[1] }}</td>
+                </tr>
+                
+                {% endfor %}
+            </table>
+        </section>
+        <section class="section" id="presentation">
+            <h3>Presentación</h3><hr>
+            <p style="padding-left: 10px;" >{{ presentation }}</p>
+        </section>
+        <section class="section" id="contacts">
+            <h3>Contactos</h3><hr>
+            <ul>
+                <li><a href="{{ listContact[0] }}"><i class="fas fa-at"></i> Correo electrónico</a></li>
+                <li><a href="{{ listContact[1] }}"><i class="fab fa-whatsapp"></i> Whatsapp.invitación</a></li>
+                <li><a href="{{ listContact[2] }}"><i class="fab fa-facebook-f"></i>&nbsp; Facebook.perfil</a></li>
+                <li><a href="{{ listContact[3] }}"><i class="fab fa-linkedin-in"></i> Linkedin.perfil</a></li>
+                <li><a href="{{ listContact[4] }}"><i class="fab fa-skype"></i> Skype.perfil</a></li>
+                <li><a href="{{ listContact[5] }}"><i class="fab fa-twitter"></i> Twitter.perfil</a></li>
+            </ul>
+        </section>
+        <section class="section" id="habilities">
+            <h3>Habilidades</h3><hr>
+            <ul>
+                <li>
+                    <h4>Programas dominados</h4>
+                    <table>
+                        {% for i in listProgram %}
+                        <tr>
+                            <td>{{ i[0] }}</td>
+                            {% if i[1] == "Básico" %}
+                            <td><i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></td>
+                            {% elif i[1] == "Básico Intermedio" %}
+                            <td><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></td>
+                            {% elif i[1] == "Intermedio" %}
+                            <td><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></td>
+                            {% elif i[1] == "Intermedio Avanzado" %}
+                            <td><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i></td>
+                            {% else %}
+                            <td><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></td>
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </li>
+                <li>
+                    <h4>Idiomas dominados</h4>
+                    <table>
+                        {% for i in listLanguage %}
+                        <tr>
+                            <td>{{ i[0] }}</td>
+                            {% if i[1] == "Básico" %}
+                            <td><i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></td>
+                            {% elif i[1] == "Básico Intermedio" %}
+                            <td><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></td>
+                            {% elif i[1] == "Intermedio" %}
+                            <td><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></td>
+                            {% elif i[1] == "Intermedio Avanzado" %}
+                            <td><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i></td>
+                            {% else %}
+                            <td><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></td>
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </li>
+            </ul>
+        </section>
+        <div id="workEducation">
+            <section class="section" id="works">
+                <h3>Experiencia laboral</h3><hr>
+                <ul>
+                    {% for i in listWork %}
+                    <li>
+                        <div class="sectionForm">
+                            <small>{{ i[0] }}</small>
+                            <h4>{{ i[1] }}</h4>
+                            <h5>{{ i[2] }}</h5>
+                            <h5>De {{ i[3] }} a {{ i[4] }}</h5>
+                            <h5><b>Logros obtenidos: </b>{{ i[5] }}</h5>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <section class="section" id="education">
+                <h3>Educación</h3><hr>
+                <ul>
+                    {% for i in listEducation %}
+                    <li>
+                        <div class="sectionForm">
+                            <small>{{ i[0] }}</small>
+                            <h4>{{ i[3] }}</h4>
+                            <h5>{{ i[4] }}</h5>
+                            <h5>De {{ i[1] }} a {{ i[2] }}</h5>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>    
+        </div>
+    </div>
+    
+    
+</div>{% endblock %}

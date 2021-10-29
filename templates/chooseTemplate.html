@@ -5,15 +5,16 @@
 {% block script %}<script src="{{ url_for('static', filename='js/close.js') }}" ></script>{% endblock %}
 
 {% block content %}<h2>Escoja la plantilla de su preferencia</h2>
-<div id="templates">
+<form id="templateForm" action="{{ url_for('fieldsGen') }}" method="post" >
     <section id="template1" class="template">
         <h3>Primera plantilla</h3>
-        <img src="../static/media/template1.jpg" class="image" /><br><br>
-        <a href="template1" class="button" >Escoger primera plantilla</a>
+        <img src="../static/media/template1.png" class="image" /><br><br>
+        <label><input type="radio" name="template" value="template1" checked />Primera plantilla(*)</label>
     </section>
     <section id="template2" class="template">
         <h3>Segunda plantilla</h3>
-        <img src="../static/media/template2.jpg" class="image" /><br><br>
-        <a href="template2" class="button" >Escoger segunda plantilla</a>
+        <img src="../static/media/template2.png" class="image" /><br><br>
+        <label><input type="radio" name="template" value="template2" />Segunda plantilla</label>
     </section>
-</div>{% endblock %}
+    <input type="submit" class="button" value="Enviar plantilla" /><h5><i> *default</i></h5>
+</form>{% endblock %}

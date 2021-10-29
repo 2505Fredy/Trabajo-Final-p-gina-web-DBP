@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css//fieldsGen.css') }}" />{% endblock %}
+
+{% block script %}<script src="{{ url_for('static', filename='js/close.js') }}" ></script>{% endblock %}
+
+{% block content %}<h2>Llene los datos del formulario</h2>
+<form id="formFieldsNumber" action="{{ url_for('fillFields') }}" method="post" >
+    <section id="formContainer">
+        <label><h3>Número de datos en perfil (ejm: edad, localidad, región de origen, etc.):<br><input type="number" name="noDataProfile" min=1 max=9 placeholder="Del 0 al 9" required /></h3></label><br>
+        <label><h3>Número de idiomas dominados:<br><input type="number" name="noLanguage" placeholder="Del 0 al 9" min=1 max=9 required /></label></h3><br>
+        <label><h3>Número de programas dominados:<br><input type="number" name="noProgram" placeholder="Del 0 al 9" min=1 max=9 required /></label></h3><br>
+        <label><h3>Número de puestos de trabajo ocupados:<br><input type="number" name="noWorks" placeholder="Del 0 al 9" min=1 max=9 required /></h3></label><br>
+        <label><h3>Número de instituciones educativas:<br><input type="number" name="noEducation" placeholder="Del 0 al 9" min=1 max=9 required /></h3></label><br>
+        <input type="submit" class="button" value="Enviar formulario" />
+    </section>
+    <section id="imageContainer">
+        <h3>Plantilla seleccionada</h3><br>
+|       <img id="templateImage" src="../static/media/{{ template }}.png" />
+    </section>
+</form>{% endblock %}
