@@ -101,9 +101,9 @@ input[type='radio'] {
     min-width: auto;
 }
 
-content > ul {
+#content > ul, #content > .ul, #content > li {
     margin-block-start: 0;
-    margin-inline-start: -2em;
+    margin-inline-start: -1em;
     list-style: none;
 }
 

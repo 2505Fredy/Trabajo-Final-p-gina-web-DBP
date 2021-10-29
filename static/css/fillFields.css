@@ -81,6 +81,10 @@ hr {
     margin-block-start: 0;
 }
 
+.ul > li {
+    margin-bottom: 15px;
+}
+
 @media screen and (max-width: 1600px) {
     #fillFields {
         grid-template-columns: 2fr 3fr;

@@ -54,7 +54,7 @@ def chooseTemplate():
                     return render_template('chooseTemplate.html')
             Users.clear()
             return redirect('login')
-        if not User(username, password, email) in Users:
+        if not 'userInSession' in session:
             loadUsers()
             Users.append(User(username, password, email))
             saveUsers()

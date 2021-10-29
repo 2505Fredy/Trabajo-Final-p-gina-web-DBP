@@ -14,7 +14,7 @@
         <header id="header">CV Generator</header>
         <nav id="menu">
             <ul id="menuButtons">
-                <li><a class="button" id="principal" href="{{ url_for('index') }}"><i class="fas fa-address-book"></i> Principal</a></li>
+                <li id="liButton"><a class="button" id="principal" href="{{ url_for('index') }}"><i class="fas fa-address-book"></i> Principal</a></li>
                 <li><a class="button" id="help" href="{{ url_for('index') }}"><i class="fas fa-question-circle"></i> Ayuda</a></li>
                 <li><a class="button" id="about" href=""><i class="fas fa-info-circle"></i> Acerca de</a></li>
                 {% block sessionButton %}{% endblock %}

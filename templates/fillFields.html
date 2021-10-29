@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css//fillFields.css') }}" />{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/fillFields.css') }}" />{% endblock %}
 
 {% block script %}<script src="{{ url_for('static', filename='js/close.js') }}" ></script>{% endblock %}
 
@@ -96,7 +96,7 @@
     <div id="column2" class="column">
         <section class="section" id="works">
             <h3>Puestos de trabajo ocupados</h3><hr>
-            <ul>
+            <ul class="ul">
                 {% for i in range(noWorks) %}
                 
                 <li>
@@ -114,7 +114,7 @@
     <div id="column3" class="column">
         <section id="institutions"class="section">
             <h3>Instituciones de educación</h3><hr>
-            <ul>
+            <ul class="ul">
                 {% for i in range(noEducation) %}
                 
                 <li>
